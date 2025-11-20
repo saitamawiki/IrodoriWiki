@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>彩Wiki — 埼玉百科事典</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #202122;
+      --muted: #54595d;
+      --blue: #36c;
+      --link: #0645ad;
+      --border: #eaecf0;
+      --panel: #f8f9fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP",
+                   "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: var(--panel);
+    }
+    .topbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 700; color: var(--blue);
+    }
+    .logo img {
+      width: 38px; height: 38px;
+    }
+    .search {
+      margin-left: auto;
+      display: flex; gap: 8px; flex: 1;
+      max-width: 500px;
+    }
+    .search input {
+      flex: 1;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .search button {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--blue);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 8px 16px;
+      display: flex;
+      gap: 16px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .nav a { color: var(--muted); }
+    main {
+      max-width: 1200px;
+      margin: 24px auto;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+    }
+    .panel {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--panel);
+    }
+    .panel header {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 10px 14px;
+      font-weight: 700;
+    }
+    .panel .content {
+      padding: 14px;
+    }
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .lang-grid a {
+      display: block;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #fff;
+      text-align: center;
+      font-weight: 600;
+    }
+    .featured img {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+    .list {
+      list-style: none; padding-left: 0; margin: 0;
+    }
+    .list li { margin-bottom: 8px; }
+    aside .sister {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    }
+    .sister a {
+      padding: 10px; background: #fff; border: 1px solid var(--border);
+      border-radius: 6px; display: block; font-weight: 600;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      margin-top: 32px;
+      background: var(--panel);
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px;
+      font-size: 13px;
+      display: flex; gap: 24px; flex-wrap: wrap;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="logo">
+        <!-- Placeholder logo circle -->
+        <img alt="Wikipedia globe" src="data:image/svg+xml;utf8,
+          <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'>
+            <circle cx='32' cy='32' r='30' fill='%23eee' stroke='%23999' stroke-width='2'/>
+            <text x='50%' y='55%' text-anchor='middle' font-size='20' fill='%23999'>W</text>
+          </svg>">
+        <span>彩Wiki</span>
+      </div>
+      <form class="search" action="#" method="get">
+        <input type="search" name="q" placeholder="彩Wiki を検索" aria-label="検索" />
+        <button type="submit">検索</button>
+      </form>
+    </div>
+    <nav class="nav">
+      <a href="#">メインページ</a>
+      <a href="#">特集</a>
+      <a href="#">新着</a>
+      <a href="#">ランダム</a>
+      <a href="#">ヘルプ</a>
+      <a href="#">寄付</a>
+      <span style="margin-left:auto;">ログイン | アカウント作成</span>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <div class="panel">
+        <header>選り抜き記事</header>
+        <div class="content featured">
+          <p><strong>見出し:</strong> 埼玉の味噌だれの素、お勧めです！！！！</p>
+          <p>
+            wikipediaみたいでしょ？
+          </p>
+          <ul class="list">
+            <li><strong>サイタマ帝国:</strong> 今のところメインの国</li>
+            <li><strong>チチブ連邦(チ連):</strong> 敵対国家になる予定..?</li>
+            <li><strong>その他:南サイタマーとか作る？</strong> </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:16px;">
+        <header>新しい記事</header>
+        <div class="content">
+          <ul class="list">
+            <li><strong>いろいろ:</strong> 力尽きた</li>
+            <li><strong>いろいろ:</strong> 力尽きた</li>
+            <li><strong>コミュニティ:</strong> 新規編集者向けガイドが公開。(嘘)</li>
+          </ul>
+
+          <p style="font-size:13px; color:#54595d;">これはデモ用のダミー項目です。</p>
+        </div>
+      </div>
+    </section>
+
+
+    <aside>
+      <div class="panel">
+        <header>言語版</header>
+        <div class="content">
+          <div class="lang-grid">
+            <a href="#">English</a>
+            <a href="#">日本語</a>
+            <a href="#">Deutsch</a>
+            <a href="#">Español</a>
+            <a href="#">Français</a>
+            <a href="#">中文</a>
+          </div>
+          <p style="font-size:13px; color:#54595d; margin-top:8px;">
+            実サイトでは各言語のトップページにリンクします。
+          </p>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:16px;">
+        <header>姉妹プロジェクト</header>
+        <div class="content sister">
+          <a href="#">ダ・サイタマー</a>
+          <a href="#">チチブ</a>
+          <a href="#">げっだん</a>
+          <a href="#">野獣先輩</a>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:16px;">
+        <header>参加する</header>
+        <div class="content">
+          <ul class="list">
+            <li><strong>編集:</strong> 記事を改善して知識を広げましょう。</li>
+            <li><strong>寄付:</strong> サーバー維持とプロジェクト継続に役立ちます。</li>
+            <li><strong>ガイド:</strong> スタイルガイドとポリシーを確認。</li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 彩Wiki — 埼玉の歴史(嘘)が書いてあるサイトです。</div>
+      <div><a href="#">利用規約</a> · <a href="#">プライバシー</a> · <a href="#">お問い合わせ</a></div>
+    </div>
+  </footer>
+</body>
+</html>
