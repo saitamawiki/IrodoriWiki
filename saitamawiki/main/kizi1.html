@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>東松山市 — フリー百科事典</title>
+  <title>東松山市 — 彩Wiki</title>
   <style>
     :root {
       --bg: #ffffff;
@@ -19,13 +19,13 @@
     a { color:var(--link); text-decoration:none; }
     a:hover { text-decoration:underline; }
     header { border-bottom:1px solid var(--border); background:var(--panel); }
-    .topbar { max-width:1200px; margin:0 auto; padding:12px 16px; display:flex; align-items:center; gap:16px; }
+    .topbar { max-width:1200px; margin:0 auto; padding:12px 16px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
     .logo { font-weight:700; color:var(--blue); display:flex; align-items:center; gap:10px; }
     .logo img { width:38px; height:38px; }
-    .search { margin-left:auto; display:flex; gap:8px; flex:1; max-width:500px; }
+    .search { margin-left:auto; display:flex; gap:8px; flex:1; min-width:200px; max-width:500px; }
     .search input { flex:1; padding:8px; border:1px solid var(--border); border-radius:4px; }
     .search button { padding:8px 14px; border:1px solid var(--border); border-radius:4px; background:var(--blue); color:#fff; font-weight:600; }
-    .nav { max-width:1200px; margin:0 auto; padding:8px 16px; display:flex; gap:16px; font-size:14px; color:var(--muted); }
+    .nav { max-width:1200px; margin:0 auto; padding:8px 16px; display:flex; flex-wrap:wrap; gap:16px; font-size:14px; color:var(--muted); }
     main { max-width:1200px; margin:24px auto; padding:0 16px; display:grid; grid-template-columns:1.1fr 0.9fr; gap:24px; }
     .panel { border:1px solid var(--border); border-radius:6px; background:var(--panel); }
     .panel header { background:#fff; border-bottom:1px solid var(--border); padding:10px 14px; font-weight:700; }
@@ -33,15 +33,23 @@
     .section-title { font-size:20px; font-weight:700; margin:18px 0 8px; border-bottom:1px solid var(--border); }
     .list { list-style:none; padding:0; margin:0; }
     .list li { margin-bottom:8px; }
-    .infobox { border:1px solid var(--border); border-radius:6px; background:#fff; }
+    .infobox { border:1px solid var(--border); border-radius:6px; background:#fff; margin-bottom:16px; }
     .infobox header { background:var(--accent); padding:10px 14px; font-weight:700; border-bottom:1px solid var(--border); }
     .infobox .row { display:flex; justify-content:space-between; padding:10px 14px; border-bottom:1px solid var(--border); }
     .infobox .row:last-child { border-bottom:none; }
     .thumb { border:1px solid var(--border); border-radius:6px; background:#fff; margin:10px 0; }
-    .thumb img { width:100%; }
+    .thumb img { width:100%; height:auto; }
     .thumb figcaption { font-size:12px; color:var(--muted); padding:8px; }
     footer { border-top:1px solid var(--border); background:var(--panel); color:var(--muted); margin-top:32px; }
     .footer-inner { max-width:1200px; margin:0 auto; padding:16px; font-size:13px; display:flex; gap:24px; flex-wrap:wrap; }
+
+    /* スマホ対応 */
+    @media (max-width:768px) {
+      main { grid-template-columns:1fr; }
+      .search { flex:1 1 100%; }
+      .nav { flex-direction:column; gap:8px; }
+      .topbar { flex-direction:column; align-items:flex-start; }
+    }
   </style>
 </head>
 <body>
@@ -53,10 +61,10 @@
             <circle cx='32' cy='32' r='30' fill='%23eee' stroke='%23999' stroke-width='2'/>
             <text x='50%' y='55%' text-anchor='middle' font-size='20' fill='%23999'>W</text>
           </svg>">
-        <span>Wikipedia</span>
+        <span>彩Wiki</span>
       </div>
       <form class="search">
-        <input type="search" placeholder="Wikipedia を検索" />
+        <input type="search" placeholder="彩Wiki を検索" />
         <button>検索</button>
       </form>
     </div>
@@ -80,36 +88,18 @@
             東松山市（ひがしまつやまし）は埼玉県中部に位置する市で、県央地域の拠点都市のひとつ。
             高坂丘陵や森林公園など自然環境に恵まれ、住宅地と商業施設が調和する街である。
           </p>
-
           <figure class="thumb">
             <img src="https://picsum.photos/900/380?random=3" alt="東松山の風景（イメージ）">
             <figcaption>東松山市のイメージ（ダミー画像）。森林公園や市街地が特徴。</figcaption>
           </figure>
-
           <h2 class="section-title">概要</h2>
-          <p>
-            東松山市は埼玉県のほぼ中央に位置し、東京から約50km。東武東上線や関越自動車道が通じ、
-            首都圏へのアクセスが良好。市内には国営武蔵丘陵森林公園があり、自然と都市生活が共存する。
-          </p>
-
-          <h2 class="section-title">歴史</h2>
-          <p>
-            古代には武蔵国の一部として発展し、中世には宿場町や農村が形成された。
-            近代以降は鉄道開通により都市化が進み、昭和29年に市制施行。
-          </p>
-
-          <h2 class="section-title">地理</h2>
-          <p>
-            市域は平野部と丘陵部から成り、比企丘陵の自然環境が広がる。
-            荒川支流の都幾川が市内を流れ、豊かな水資源を有する。
-          </p>
-
+          <p>東京から約50km、東武東上線や関越自動車道が通じ、首都圏へのアクセスが良好。</p>
           <h2 class="section-title">文化・観光</h2>
           <ul class="list">
-            <li><strong>国営武蔵丘陵森林公園:</strong> 日本初の国営公園。</li>
-            <li><strong>箭弓稲荷神社:</strong> 市の代表的な神社で藤まつりが有名。</li>
-            <li><strong>東松山ぼたん園:</strong> 春には色鮮やかな牡丹が咲き誇る。</li>
-            <li><strong>グルメ:</strong> 東松山名物「やきとり」（豚のカシラ肉を使う）。</li>
+            <li><strong>森林公園:</strong> 日本初の国営公園。</li>
+            <li><strong>箭弓稲荷神社:</strong> 藤まつりが有名。</li>
+            <li><strong>ぼたん園:</strong> 春には牡丹が咲き誇る。</li>
+            <li><strong>グルメ:</strong> 名物「やきとり」（豚カシラ肉）。</li>
           </ul>
         </div>
       </article>
@@ -120,9 +110,19 @@
         <header>基本情報</header>
         <div class="row"><div><strong>名称</strong></div><div>東松山市</div></div>
         <div class="row"><div><strong>所属</strong></div><div>埼玉県</div></div>
-        <div class="row"><div><strong>人口</strong></div><div>約9万人（推定）</div></div>
+        <div class="row"><div><strong>人口</strong></div><div>約9万人</div></div>
         <div class="row"><div><strong>面積</strong></div><div>約65 km²</div></div>
         <div class="row"><div><strong>交通</strong></div><div>東武東上線・関越自動車道</div></div>
-
         <div class="row"><div><strong>名物</strong></div><div>やきとり</div></div>
+      </div>
+    </aside>
+  </main>
 
+  <footer>
+    <div class="footer-inner">
+      <div>© 彩Wiki — デモページ</div>
+      <div><a href="#">利用規約</a> · <a href="#">プライバシー</a></div>
+    </div>
+  </footer>
+</body>
+</html>
